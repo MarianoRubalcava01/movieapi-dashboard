@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
- const [movies, setMovies] = useState([]);
- const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
  useEffect(() => {
   fetch('/api/movies/popular')
@@ -17,7 +18,7 @@ function App() {
   .catch(err=>{
     console.error(err);
     setMessage("Failed to fetch");
-    setLoadiing(false);
+    setLoading(false);
   });
  }, []);
 
@@ -32,11 +33,11 @@ function App() {
         <div className="movie-grid">
           {movies.map(movie =>(
             <div key={movie.id}
-            className={movie-card}>
-              <img>
-                src={'https://image.tmdb.org/t/p/w500${movie.poster_path}'}
+            className="movie-card">
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
-              </img>
+              />
               <h3>{movie.title}</h3>
             </div>
           ))}
