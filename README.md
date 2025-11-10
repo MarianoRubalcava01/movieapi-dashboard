@@ -1,1 +1,1 @@
-https://frontera-mariano.atlassian.net/jira/software/projects/MD/boards/34
+https://frontera-mariano.atlassian.net/jira/software/projects/MOV/boards/35
